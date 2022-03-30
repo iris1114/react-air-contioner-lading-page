@@ -43,8 +43,6 @@ const StyledMenu = styled.div`
     .menu{
         font-family: var(--sub-font);
         position: relative;
-
-        $this: &;
     
         &__logo-wraper{
             width: 150px;
@@ -93,6 +91,14 @@ const StyledMenu = styled.div`
             &--line2{
                 transform: rotate(135deg);
             }
+
+            &:hover .menu__close--line1{
+                transform: rotate(0deg);
+            }
+            &:hover .menu__close--line2{
+                transform: rotate(180deg);
+            }
+            
         }
     }
 `
@@ -147,14 +153,14 @@ const MobileHeader = () => {
                     </div>
                 
                     <ul className="menu__list">
-                        <li className="menu__item"><a className="menu__link" href="/">About</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Service</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Gallery</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Team</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Pricing</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Testimonial</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Blog</a></li>
-                        <li className="menu__item"><a className="menu__link" href="/">Contact</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">About</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Service</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Gallery</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Team</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Pricing</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Testimonial</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Blog</a></li>
+                        <li className="menu__item"><a href="/" className="menu__link">Contact</a></li>
                     </ul>
                     <div className="menu__close" onClick={closeMenu}>
                         <span className="menu__close--line1"></span>

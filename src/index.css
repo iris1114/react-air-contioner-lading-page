@@ -26,10 +26,10 @@ body {
   background-color: #ccc;
 }
 
-img{
+/* img{
   max-width: 100%;
   vertical-align: middle;
-}
+} */
 
 .container{
   max-width: 1024px;

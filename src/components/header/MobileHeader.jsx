@@ -12,6 +12,10 @@ const StyledHeader = styled.div`
         justify-content: space-between;
         align-item: center;
         background-color: var(--white-color);
+        position: fixed;
+        top: 0px;
+        z-index: 100;
+        width: 100%;
 
         &__logo-wraper{
             width: 200px;
@@ -26,6 +30,10 @@ const StyledHeader = styled.div`
         &__toggle{
             width: 97px;
             border-left: 1px solid var(--line-gray);
+
+            img{
+                width: 100%;
+            }
         }
     }
 `

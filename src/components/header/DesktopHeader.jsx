@@ -9,13 +9,18 @@ import { FaGoogle } from "react-icons/fa";
 
 import toggle from "../../images/header/toggle.png";
 
-
-
 const StyledHeader = styled.section`
     display: flex;
-    justify-content: venter;
+    justify-content: center;
     margin: auto;
     padding: 0px 15px;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    width: 100%;
 `
 
 const StyledLogo = styled.div`
@@ -24,6 +29,10 @@ const StyledLogo = styled.div`
         background-color: var(--base-color);
         padding: 44px 20px;
         text-align: center;
+    }
+
+    .header__logo{
+        width: 130px;
     }
     
 `
@@ -98,6 +107,10 @@ const StyledNav = styled.div`
 
         &__toggle{
             width: 97px;
+
+            img{
+                width: 100%;
+            }
         }
     }
 `

@@ -1,5 +1,10 @@
+import { useEffect, useRef, useState } from "react";
+
 import logo from "../../images/header/logo.png";
+import logoMenu from "../../images/header/logoMenu.png";
+import toggle from "../../images/header/toggle.png";
 import styled from "styled-components";
+
 import { FaSearch } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -7,7 +12,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 
-import toggle from "../../images/header/toggle.png";
+import { device } from "../../utils/device";
 
 const StyledHeader = styled.section`
     display: flex;
@@ -29,6 +34,11 @@ const StyledLogo = styled.div`
         background-color: var(--base-color);
         padding: 44px 20px;
         text-align: center;
+
+        @media ${device.laptop}{
+            width: 200px;
+            padding: 7.5px 20px;
+        }
     }
 
     .header__logo{
@@ -51,6 +61,10 @@ const StyledInfo = styled.div`
         line-height: 42px;
         padding-left: 40px;
         color: var(--white-color);
+
+        @media ${device.laptop}{
+            display: none;
+        }
 
         &__text{
             display: flex; 
@@ -75,6 +89,10 @@ const StyledNav = styled.div`
 
         &__list{
             display: flex; 
+
+            @media ${device.laptop}{
+                display: none;
+            }
         }
 
         &__item{
@@ -92,6 +110,7 @@ const StyledNav = styled.div`
         &__btn{
             display: flex;
             margin-left: auto;
+            cursor: pointer;
         }
 
         &__search{
@@ -103,6 +122,10 @@ const StyledNav = styled.div`
             border-right: 1px solid var(--line-gray);
             font-size: 18px;
             font-weight: 300;
+
+            @media ${device.laptopM}{
+                display: none;
+            }
         }
 
         &__toggle{
@@ -111,11 +134,119 @@ const StyledNav = styled.div`
             img{
                 width: 100%;
             }
+
+            @media ${device.laptopM}{
+                display: none;
+            }
+
+            @media ${device.laptop}{
+                display: block;
+                border-left: 1px solid var(--line-gray);
+            }
         }
     }
 `
 
-const DesktopHeader = () => {
+const StyledAsideMenu = styled.div`
+    background-color: var(--white-color);  
+    height: 100vh; 
+    position: fixed;
+    top: 0;
+    left: ${(props) => props.variant === "open" ? "0" : "-75%"}; 
+    width: 75%;
+    transition: 0.5s;
+    overflow-y: auto;
+
+    .menu{
+        font-family: var(--sub-font);
+        position: relative;
+    
+        &__logo-wraper{
+            width: 150px;
+            padding: 30px 15px;
+        }
+
+        &__logo{
+            width: 150px;
+        }
+
+        &__item{
+            padding: 12px 15px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--line-gray);
+        }
+
+        &__link{
+            color: var(--black-color);
+
+            &:hover{
+                color: var(--base-color);
+            }
+        }
+
+        &__close{
+            position: absolute;
+            top: 55px;
+            right: 50px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+
+            &--line1, &--line2 {
+                position: absolute;
+                background-color: var(--black-color);
+                width: 24px;
+                height: 2px;
+                opacity: .5;
+                transition: 0.3s;
+            }
+
+            &--line1{
+                transform: rotate(45deg);
+            }
+
+            &--line2{
+                transform: rotate(135deg);
+            }
+
+            &:hover .menu__close--line1{
+                transform: rotate(0deg);
+            }
+            &:hover .menu__close--line2{
+                transform: rotate(180deg);
+            }
+        }
+    }
+`
+
+const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef= useRef(null);
+    const toggleRef= useRef(null);
+
+    const closeMobileMenu = () => {
+        setIsOpen(false);
+    }
+
+    const openMobileMenu = () => {
+        if(window.innerWidth <= 1024){
+            setIsOpen(!isOpen);
+        }
+    }
+
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target) && !toggleRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+    }
+
+    useEffect(() => {
+          document.addEventListener("mousedown", handleClickOutside);
+          return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+          };
+    },[isOpen])
+
     return (
         <header>
             <StyledHeader className="header">
@@ -162,17 +293,41 @@ const DesktopHeader = () => {
                                     <FaSearch />
                                 </div>
                                 
-                                <div className="nav__toggle">
-                                    <img src={toggle} alt="toggle" />
+                                <div className="nav__toggle" onClick={openMobileMenu}>
+                                    <img src={toggle} alt="toggle" ref={toggleRef}/>
                                 </div>
                             </div>
                         </div>
                     </StyledNav>
                 </StyledMenu>
-        
+
+
+                <StyledAsideMenu variant={isOpen ? "open" : "close"} ref={menuRef}>
+                    <div className="menu">
+                        <div className="menu__logo-wraper">
+                            <a href="/" className="menu__logo">
+                                <img src={logoMenu} alt="logo" />
+                            </a>
+                        </div>
+                        <ul className="menu__list">
+                            <li className="menu__item"><a href="/" className="menu__link">About</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Service</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Gallery</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Team</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Pricing</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Testimonial</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Blog</a></li>
+                            <li className="menu__item"><a href="/" className="menu__link">Contact</a></li>
+                        </ul>
+                        <div className="menu__close" onClick={closeMobileMenu}>
+                            <span className="menu__close--line1"></span>
+                            <span className="menu__close--line2"></span>
+                        </div>
+                    </div>
+                </StyledAsideMenu> 
             </StyledHeader>
         </header>
     )
 }
 
-export default DesktopHeader;
+export default Header;

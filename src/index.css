@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Spartan:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Spartan:wght@700&display=swap");
 
-:root{
-  --font: 'Comfortaa', cursive;
+:root {
+  --font: "Comfortaa", cursive;
   --sub-font: "Open Sans", sans-serif;
   --base-color: #fbcc0a;
   --hero-color: #ffaa17;
@@ -9,21 +9,23 @@
   --white-color: #fff;
   --line-gray: #e1e1e1;
   --black-color: #333333;
+  --font-xl: 70px;
   --font-l: 40px;
   --font-m: 20px;
   --font-s: 14px;
+  --font-base: 16px;
+  --font-xs: 12px;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family:var(--font);
-  font-size: var(--font-s);
-  background-color: #ccc;
+  font-family: var(--font);
+  font-size: var(--font-base);
 }
 
 /* img{
@@ -31,16 +33,16 @@ body {
   vertical-align: middle;
 } */
 
-.container{
+.container {
   max-width: 1024px;
   margin: auto;
   padding: 0px 15px;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-li{
+li {
   list-style-type: none;
 }

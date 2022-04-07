@@ -1,20 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../utils/device";
 
-const Button = ({ text, variant, onButtonClick }) => {
-  return (
-    <StyledButton
-      href="/"
-      variant={variant}
-      onClick={() => {
-        onButtonClick && onButtonClick();
-      }}
-    >
-      {text}
-    </StyledButton>
-  );
-};
-
 const StyledButton = styled.a`
   background-color: ${(props) =>
     props.variant === "primary" ? "var(--base-color)" : "var(--white-color)"};
@@ -65,5 +51,19 @@ const StyledButton = styled.a`
     } 
   }
 `;
+
+const Button = ({ text, variant, onButtonClick }) => {
+  return (
+    <StyledButton
+      href="/"
+      variant={variant}
+      onClick={() => {
+        onButtonClick && onButtonClick();
+      }}
+    >
+      {text}
+    </StyledButton>
+  );
+};
 
 export default Button;

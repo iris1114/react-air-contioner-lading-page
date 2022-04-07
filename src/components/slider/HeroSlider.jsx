@@ -5,6 +5,7 @@ import Button from "../common/Button";
 
 const StyledHeroSlider = styled.div`
   height: 100vh;
+  overflow: hidden;
 
   .slick-arrow {
     background-color: var(--base-color);
@@ -64,7 +65,7 @@ const StyledBanner = styled.div`
   background-position: center;
   position: relative;
 
-  @media ${device.laptopL} {
+  @media ${device.laptopM} {
     height: 80vh;
   }
 
@@ -89,7 +90,7 @@ const StyledBanner = styled.div`
       z-index: 2;
       transform: translateY(-50%);
 
-      @media ${device.laptopL} {
+      @media ${device.laptopM} {
         width: 80%;
         top: 55%;
       }
@@ -102,11 +103,11 @@ const StyledBanner = styled.div`
     }
 
     &__title {
-      font-size: var(--font-xl);
+      font-size: var(--font-2xl);
       color: var(--hero-color);
       margin-bottom: 20px;
 
-      @media ${device.laptopL} {
+      @media ${device.laptopM} {
         font-size: var(--font-l);
       }
     }

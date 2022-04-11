@@ -5,13 +5,7 @@ import logoMenu from "../../images/header/logoMenu.png";
 import toggle from "../../images/header/toggle.png";
 import styled from "styled-components";
 
-import { FaSearch } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
-
+import { FaSearch, FaFacebookF, FaTwitter,FaInstagram,FaLinkedinIn,FaGoogle } from "react-icons/fa";
 import { device } from "../../utils/device";
 
 const StyledHeader = styled.section`
@@ -68,7 +62,7 @@ const StyledInfo = styled.div`
       display: flex;
       font-size: var(--font-s);
 
-      &--first {
+      &-first {
         margin-right: 20px;
       }
 
@@ -231,10 +225,10 @@ const StyledAsideMenu = styled.div`
         transform: rotate(135deg);
       }
 
-      &:hover .menu__close--line1 {
+      &:hover .menu__close-line1 {
         transform: rotate(0deg);
       }
-      &:hover .menu__close--line2 {
+      &:hover .menu__close-line2 {
         transform: rotate(180deg);
       }
     }
@@ -288,7 +282,7 @@ const Header = () => {
           <StyledInfo>
             <div className="info">
               <ul className="info__text">
-                <li className="info__text--first">info@website.com</li>
+                <li className="info__text-first">info@website.com</li>
                 <li>098 098 987 89</li>
               </ul>
               <div className="info__social">
@@ -418,8 +412,8 @@ const Header = () => {
               </li>
             </ul>
             <div className="menu__close" onClick={closeMobileMenu}>
-              <span className="menu__close--line1"></span>
-              <span className="menu__close--line2"></span>
+              <span className="menu__close-line1"></span>
+              <span className="menu__close-line2"></span>
             </div>
           </div>
         </StyledAsideMenu>

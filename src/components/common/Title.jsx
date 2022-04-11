@@ -19,11 +19,12 @@ const StyledTitle = styled.h2`
     }
 `
 
-const Title = ({ blackText, yellowText }) => {
+const Title = ({ blackText, yellowText, otherBlackText }) => {
     return (
       <StyledTitle>
         <span className="black">{blackText}</span>
         <span className="yellow">{yellowText}</span>
+        <span className="black">{otherBlackText}</span>
       </StyledTitle>
     );
   };

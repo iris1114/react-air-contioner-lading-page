@@ -71,10 +71,29 @@ const StyledInfo = styled.div`
       &--first {
         margin-right: 20px;
       }
+
+      li:hover {
+        cursor: pointer;
+        color: var(--base-hover-color);
+      }
     }
     &__social {
+      display: flex;
+      align-items: center;
+
       .icon {
-        margin-right: 20px;
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        text-align: center;
+
+        svg {
+          vertical-align: middle;
+        }
+
+        &:hover {
+          background-color: var(--base-hover-color);
+        }
       }
     }
   }
@@ -103,6 +122,10 @@ const StyledNav = styled.div`
     &__link {
       text-transform: uppercase;
       color: var(--black-color);
+
+      &:hover {
+        color: var(--base-color);
+      }
     }
 
     &__btn {
@@ -264,16 +287,26 @@ const Header = () => {
         <StyledMenu>
           <StyledInfo>
             <div className="info">
-              <div className="info__text">
-                <div className="info__text--first">info@website.com</div>
-                <div>098 098 987 89</div>
-              </div>
+              <ul className="info__text">
+                <li className="info__text--first">info@website.com</li>
+                <li>098 098 987 89</li>
+              </ul>
               <div className="info__social">
-                <FaFacebookF className="icon" />
-                <FaTwitter className="icon" />
-                <FaInstagram className="icon" />
-                <FaLinkedinIn className="icon" />
-                <FaGoogle className="icon" />
+                <div className="icon">
+                  <FaFacebookF />
+                </div>
+                <div className="icon">
+                  <FaTwitter />
+                </div>
+                <div className="icon">
+                  <FaInstagram />
+                </div>
+                <div className="icon">
+                  <FaLinkedinIn />
+                </div>
+                <div className="icon">
+                  <FaGoogle />
+                </div>
               </div>
             </div>
           </StyledInfo>

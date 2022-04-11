@@ -4,7 +4,6 @@ import { device } from "../../utils/device";
 import Button from "../common/Button";
 
 const StyledHeroSlider = styled.div`
-  height: 100vh;
   overflow: hidden;
 
   .slick-arrow {

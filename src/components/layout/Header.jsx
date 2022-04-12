@@ -5,7 +5,14 @@ import logoMenu from "../../images/header/logoMenu.png";
 import toggle from "../../images/header/toggle.png";
 import styled from "styled-components";
 
-import { FaSearch, FaFacebookF, FaTwitter,FaInstagram,FaLinkedinIn,FaGoogle } from "react-icons/fa";
+import {
+  FaSearch,
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaGoogle,
+} from "react-icons/fa";
 import { device } from "../../utils/device";
 
 const StyledHeader = styled.section`
@@ -94,6 +101,7 @@ const StyledInfo = styled.div`
 `;
 
 const StyledNav = styled.div`
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 3%);
   .nav {
     display: flex;
     background-color: var(--white-color);

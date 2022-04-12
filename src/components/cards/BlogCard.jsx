@@ -44,11 +44,11 @@ const StyledBlogCard = styled.div`
       &-date{
         font-size: var(--font-s);  
         margin-bottom: 20px;
-        vertical-align: middle;
-        margin-right: 10px;
         
         &-icon{
             color: var(--base-color);
+            vertical-align: middle;
+            margin-right: 10px;
         }
       }
     }

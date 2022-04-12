@@ -78,7 +78,7 @@ const StyledTestinonailCard = styled.div`
   }
 `;
 
-const TestinonailCard = ({card}) => {
+const TestinonailCard = ({ card }) => {
   return (
     <StyledTestinonailCard className="col-12">
       <div className="card">
@@ -86,20 +86,25 @@ const TestinonailCard = ({card}) => {
           <img className="card__img-main" src={card.img} alt="card" />
         </div>
         <div className="card__text col-md-9 col-12">
-            <div className="card__text-top">
-                <div className="card__text-top-left">
-                    <h3 className="card__text-top-left-name">{card.name}</h3>
-                    <div className="card__text-top-left-star">
-                        <Rating initialRating={card.star} readonly emptySymbol={<FaRegStar/>} fullSymbol={<FaStar/>}/>
-                        <span className="score">({card.star}/5)</span>
-                    </div>
-                </div>
-                
-                <div className="card__text-top-date">{card.date}</div>
+          <div className="card__text-top">
+            <div className="card__text-top-left">
+              <h3 className="card__text-top-left-name">{card.name}</h3>
+              <div className="card__text-top-left-star">
+                <Rating
+                  initialRating={card.star}
+                  readonly
+                  emptySymbol={<FaRegStar />}
+                  fullSymbol={<FaStar />}
+                />
+                <span className="score">({card.star}/5)</span>
+              </div>
             </div>
+
+            <div className="card__text-top-date">{card.date}</div>
+          </div>
           <p className="card__text-bottom">{card.comment}</p>
         </div>
-      </div>    
+      </div>
     </StyledTestinonailCard>
   );
 };

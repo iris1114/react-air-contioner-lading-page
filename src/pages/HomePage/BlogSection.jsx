@@ -6,12 +6,12 @@ import { blogCardList } from "../../utils/data";
 import { device } from "../../utils/device";
 
 const StyledBlogSection = styled.section`
-  .blog{
-    &__title{
-      margin:0px auto 50px;
+  .blog {
+    &__title {
+      margin: 0px auto 50px;
       text-align: center;
 
-      &-desc{
+      &-desc {
         width: 60%;
         margin: auto;
 
@@ -21,7 +21,7 @@ const StyledBlogSection = styled.section`
       }
     }
 
-    &__cards{
+    &__cards {
       display: flex;
       flex-wrap: wrap;
     }
@@ -41,13 +41,9 @@ const BlogSection = () => {
           </p>
         </div>
         <div className="blog__cards">
-          {
-            blogCardList.map((card, index) => {
-              return(
-                <BlogCard card={card} key={index} />
-              );
-            })
-          }
+          {blogCardList.map((card, index) => {
+            return <BlogCard card={card} key={index} />;
+          })}
         </div>
       </div>
     </StyledBlogSection>

@@ -5,12 +5,12 @@ import { priceList } from "../../utils/data";
 import { device } from "../../utils/device";
 
 const StyledPricingSection = styled.section`
-  .pricing{
-    &__title{
-      margin:0px auto 50px;
+  .pricing {
+    &__title {
+      margin: 0px auto 50px;
       text-align: center;
 
-      &-desc{
+      &-desc {
         width: 60%;
         margin: auto;
 
@@ -20,13 +20,11 @@ const StyledPricingSection = styled.section`
       }
     }
 
-    &__list{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-
+    &__list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-   
   }
 `;
 
@@ -43,13 +41,9 @@ const PricingSection = () => {
           </p>
         </div>
         <div className="pricing__list">
-        {
-            priceList.map((item, index) => {
-                return(
-                    <PricingCard card={item} key={index} />
-                );
-            })
-        }
+          {priceList.map((item, index) => {
+            return <PricingCard card={item} key={index} />;
+          })}
         </div>
       </div>
     </StyledPricingSection>

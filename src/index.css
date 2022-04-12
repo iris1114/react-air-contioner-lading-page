@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Spartan:wght@700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 
 :root {
   --font: "Open Sans", sans-serif;
@@ -13,6 +13,7 @@
   --font-color: #686a6f;
   --secondary-color: #1d2451;
   --input-bg: #f4f5f8;
+  --footer-bg: #f7f7f7;
   --font-2xl: 70px;
   --font-xl: 58px;
   --font-2l: 50px;

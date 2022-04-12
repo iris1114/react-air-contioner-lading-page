@@ -64,13 +64,13 @@ const GallerySection = () => {
           </p>
         </div>
         <div className="gallery__imgs">
-            <div className="gallery__imgs-left">
-                <img src={gallery1} alt="gallery" />
-            </div>
-            <div className="gallery__imgs-right">
-                <img src={gallery2} alt="gallery" />
-                <img src={gallery3} alt="gallery" />
-            </div>
+          <div className="gallery__imgs-left">
+            <img src={gallery1} alt="gallery" />
+          </div>
+          <div className="gallery__imgs-right">
+            <img src={gallery2} alt="gallery" />
+            <img src={gallery3} alt="gallery" />
+          </div>
         </div>
       </div>
     </StyledGallerySection>

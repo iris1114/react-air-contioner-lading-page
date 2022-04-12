@@ -5,12 +5,12 @@ import { serviceCardList } from "../../utils/data";
 import { device } from "../../utils/device";
 
 const StyledServiceSection = styled.section`
-  .service{
-    &__title{
-      margin:0px auto 50px;
+  .service {
+    &__title {
+      margin: 0px auto 50px;
       text-align: center;
 
-      &-desc{
+      &-desc {
         width: 60%;
         margin: auto;
 
@@ -20,7 +20,7 @@ const StyledServiceSection = styled.section`
       }
     }
 
-    &__cards{
+    &__cards {
       display: flex;
       flex-wrap: wrap;
     }
@@ -40,13 +40,9 @@ const ServiceSection = () => {
           </p>
         </div>
         <div className="service__cards">
-          {
-            serviceCardList.map((card, index) => {
-              return(
-                <ServiceCard card={card} key={index} />
-              );
-            })
-          }
+          {serviceCardList.map((card, index) => {
+            return <ServiceCard card={card} key={index} />;
+          })}
         </div>
       </div>
     </StyledServiceSection>

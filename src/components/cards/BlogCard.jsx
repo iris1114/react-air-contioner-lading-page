@@ -6,7 +6,6 @@ const StyledBlogCard = styled.div`
   cursor: pointer;
   
   .card{
-
     &__img{
       width: 100%;
       position: relative;
@@ -52,28 +51,28 @@ const StyledBlogCard = styled.div`
       }
     }
   }
-
-   
   }
 `;
 
-const BlogCard = ({card}) => {
+const BlogCard = ({ card }) => {
   return (
     <StyledBlogCard className="col-md-6 col-lg-4">
       <div className="card">
         <div className="card__img">
           <img className="card__img-main" src={card.img} alt="card" />
-          <img className="card__img-icon" src={card.icon} alt="icon"/>
+          <img className="card__img-icon" src={card.icon} alt="icon" />
         </div>
         <div className="card__text">
-            <div className="card__text-date">
-              <span className="card__text-date-icon"><FaCalendarAlt /> </span>
-              {card.date}
-            </div>
+          <div className="card__text-date">
+            <span className="card__text-date-icon">
+              <FaCalendarAlt />
+            </span>
+            {card.date}
+          </div>
           <h3 className="card__text-title">{card.title}</h3>
           <p className="card__text-desc">{card.desc}</p>
         </div>
-      </div>    
+      </div>
     </StyledBlogCard>
   );
 };

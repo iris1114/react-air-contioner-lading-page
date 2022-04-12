@@ -5,6 +5,9 @@ const StyledTitle = styled.h2`
     font-size: var(--font-xl);
     font-weight: 700;
     margin-bottom: 20px;
+    position: relative;
+    font-family: var(--title-font);
+    line-height: var(--font-2xl);
 
     @media ${device.tablet} {
         font-size: var(--font-l);
@@ -17,14 +20,20 @@ const StyledTitle = styled.h2`
     .yellow{
         color: var(--base-color);
     }
+
+    .white{
+        color: var(--white-color);
+      
+    }
 `
 
-const Title = ({ blackText, yellowText, otherBlackText }) => {
+const Title = ({ blackText, yellowText, otherBlackText, whiteText }) => {
     return (
       <StyledTitle>
         <span className="black">{blackText}</span>
         <span className="yellow">{yellowText}</span>
         <span className="black">{otherBlackText}</span>
+        <span className="white">{whiteText}</span>
       </StyledTitle>
     );
   };

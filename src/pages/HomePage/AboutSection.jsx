@@ -166,12 +166,12 @@ const AboutSection = () => {
                       x="0px"
                       y="0px"
                       viewBox="0 0 197 197"
-                      enable-background="new 0 0 197 197"
+                      enableBackground="new 0 0 197 197"
                       xmlSpace="preserve"
                     >
                       <circle
                         className="sigma_progress-stroke"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                         cx="98.5"
                         cy="98.6"
                         r="97.5"
@@ -179,7 +179,7 @@ const AboutSection = () => {
                       <circle
                         className="sigma_progress-round"
                         data-to="210"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                         cx="98.5"
                         cy="98.6"
                         r="97.5"

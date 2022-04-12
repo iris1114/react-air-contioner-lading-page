@@ -173,7 +173,6 @@ const StyledAsideMenu = styled.div`
   overflow-y: auto;
 
   .menu {
-    font-family: var(--sub-font);
     position: relative;
 
     &__logo-wraper {

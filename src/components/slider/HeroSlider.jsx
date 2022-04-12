@@ -105,6 +105,8 @@ const StyledBanner = styled.div`
       font-size: var(--font-2xl);
       color: var(--hero-color);
       margin-bottom: 20px;
+      font-family: var(--title-font);
+      line-height: var(--font-2xl);
 
       @media ${device.laptopM} {
         font-size: var(--font-l);

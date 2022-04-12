@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Spartan:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 :root {
-  --font: "Comfortaa", cursive;
-  --sub-font: "Open Sans", sans-serif;
+  --font: "Open Sans", sans-serif;
+  --title-font: "Comfortaa", cursive;
   --base-color: #fbcc0a;
   --hero-color: #ffaa17;
   --base-hover-color: #b29106;
@@ -11,8 +12,10 @@
   --black-color: #333333;
   --font-color: #686a6f;
   --secondary-color: #1d2451;
+  --input-bg: #f4f5f8;
   --font-2xl: 70px;
   --font-xl: 58px;
+  --font-2l: 50px;
   --font-l: 40px;
   --font-2m: 24px;
   --font-m: 20px;
@@ -31,6 +34,7 @@ body {
   font-family: var(--font);
   font-size: var(--font-base);
   color: var(--font-color);
+  line-height: var(--font-2m);
 }
 
 /* img{

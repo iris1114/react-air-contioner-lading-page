@@ -110,6 +110,7 @@ const StyledBanner = styled.div`
 
       @media ${device.laptopM} {
         font-size: var(--font-l);
+        line-height: var(--font-xl);
       }
     }
 
